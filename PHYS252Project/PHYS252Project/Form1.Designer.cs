@@ -30,8 +30,8 @@
         {
             this.titleLabel = new System.Windows.Forms.Label();
             this.modeGroupBox = new System.Windows.Forms.GroupBox();
-            this.massRadioButton = new System.Windows.Forms.RadioButton();
             this.velocityRadioButton = new System.Windows.Forms.RadioButton();
+            this.massRadioButton = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -39,12 +39,12 @@
             this.weightLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.variablesGroupBox = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.goGroupBox = new System.Windows.Forms.GroupBox();
             this.startButton = new System.Windows.Forms.Button();
             this.resultsGroupBox = new System.Windows.Forms.GroupBox();
             this.resultsTextBox = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.clearButton = new System.Windows.Forms.Button();
             this.creditLabel = new System.Windows.Forms.Label();
@@ -61,9 +61,10 @@
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.titleLabel.Location = new System.Drawing.Point(82, 26);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(500, 31);
+            this.titleLabel.Size = new System.Drawing.Size(499, 31);
             this.titleLabel.TabIndex = 0;
-            this.titleLabel.Text = "PHYS 252 - Simulation of Time Variation";
+            this.titleLabel.Text = "PHYS 252 - Simulation of Time Dialation";
+            this.titleLabel.Click += new System.EventHandler(this.titleLabel_Click);
             // 
             // modeGroupBox
             // 
@@ -77,17 +78,6 @@
             this.modeGroupBox.TabStop = false;
             this.modeGroupBox.Text = "Step 1: Pick mode";
             // 
-            // massRadioButton
-            // 
-            this.massRadioButton.AutoSize = true;
-            this.massRadioButton.Location = new System.Drawing.Point(6, 23);
-            this.massRadioButton.Name = "massRadioButton";
-            this.massRadioButton.Size = new System.Drawing.Size(71, 30);
-            this.massRadioButton.TabIndex = 0;
-            this.massRadioButton.TabStop = true;
-            this.massRadioButton.Text = "Mass";
-            this.massRadioButton.UseVisualStyleBackColor = true;
-            // 
             // velocityRadioButton
             // 
             this.velocityRadioButton.AutoSize = true;
@@ -98,6 +88,17 @@
             this.velocityRadioButton.TabStop = true;
             this.velocityRadioButton.Text = "Velocity";
             this.velocityRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // massRadioButton
+            // 
+            this.massRadioButton.AutoSize = true;
+            this.massRadioButton.Location = new System.Drawing.Point(6, 23);
+            this.massRadioButton.Name = "massRadioButton";
+            this.massRadioButton.Size = new System.Drawing.Size(71, 30);
+            this.massRadioButton.TabIndex = 0;
+            this.massRadioButton.TabStop = true;
+            this.massRadioButton.Text = "Mass";
+            this.massRadioButton.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -168,6 +169,23 @@
             this.variablesGroupBox.TabStop = false;
             this.variablesGroupBox.Text = "Step 2: Fill in necessary info";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tempus Sans ITC", 12F);
+            this.label4.Location = new System.Drawing.Point(178, 133);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "label4";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(23, 126);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(136, 34);
+            this.textBox5.TabIndex = 8;
+            // 
             // goGroupBox
             // 
             this.goGroupBox.Controls.Add(this.startButton);
@@ -194,7 +212,7 @@
             this.resultsGroupBox.Font = new System.Drawing.Font("Tempus Sans ITC", 15F);
             this.resultsGroupBox.Location = new System.Drawing.Point(358, 92);
             this.resultsGroupBox.Name = "resultsGroupBox";
-            this.resultsGroupBox.Size = new System.Drawing.Size(305, 289);
+            this.resultsGroupBox.Size = new System.Drawing.Size(321, 289);
             this.resultsGroupBox.TabIndex = 10;
             this.resultsGroupBox.TabStop = false;
             this.resultsGroupBox.Text = "Step 4: View Results   ";
@@ -204,25 +222,8 @@
             this.resultsTextBox.Location = new System.Drawing.Point(7, 34);
             this.resultsTextBox.Multiline = true;
             this.resultsTextBox.Name = "resultsTextBox";
-            this.resultsTextBox.Size = new System.Drawing.Size(292, 249);
+            this.resultsTextBox.Size = new System.Drawing.Size(308, 249);
             this.resultsTextBox.TabIndex = 0;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(23, 126);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(136, 34);
-            this.textBox5.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tempus Sans ITC", 12F);
-            this.label4.Location = new System.Drawing.Point(178, 133);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 20);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "label4";
             // 
             // groupBox1
             // 
@@ -230,10 +231,10 @@
             this.groupBox1.Font = new System.Drawing.Font("Tempus Sans ITC", 15F);
             this.groupBox1.Location = new System.Drawing.Point(358, 403);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(305, 85);
+            this.groupBox1.Size = new System.Drawing.Size(321, 85);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Step 5: Hit \"Reset Simulation\"";
+            this.groupBox1.Text = "Step 5: Once completed, hit \"Reset\"";
             // 
             // clearButton
             // 
@@ -241,7 +242,7 @@
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(177, 30);
             this.clearButton.TabIndex = 0;
-            this.clearButton.Text = "Reset Simulation";
+            this.clearButton.Text = "Reset";
             this.clearButton.UseVisualStyleBackColor = true;
             // 
             // creditLabel
@@ -258,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 508);
+            this.ClientSize = new System.Drawing.Size(707, 516);
             this.Controls.Add(this.creditLabel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.resultsGroupBox);

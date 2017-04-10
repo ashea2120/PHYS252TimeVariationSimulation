@@ -16,5 +16,10 @@ namespace PHYS252Project
         {
             InitializeComponent();
         }
+
+        private void titleLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
