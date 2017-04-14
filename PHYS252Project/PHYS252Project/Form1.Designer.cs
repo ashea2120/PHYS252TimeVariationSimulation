@@ -30,17 +30,13 @@
         {
             this.titleLabel = new System.Windows.Forms.Label();
             this.modeGroupBox = new System.Windows.Forms.GroupBox();
-            this.velocityRadioButton = new System.Windows.Forms.RadioButton();
+            this.timeRadioButton = new System.Windows.Forms.RadioButton();
             this.massRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.heightLabel = new System.Windows.Forms.Label();
-            this.weightLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.velocityLabel = new System.Windows.Forms.Label();
+            this.massLabel = new System.Windows.Forms.Label();
             this.variablesGroupBox = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.massNumeric = new System.Windows.Forms.NumericUpDown();
+            this.velocityNumeric = new System.Windows.Forms.NumericUpDown();
             this.goGroupBox = new System.Windows.Forms.GroupBox();
             this.startButton = new System.Windows.Forms.Button();
             this.resultsGroupBox = new System.Windows.Forms.GroupBox();
@@ -48,8 +44,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.clearButton = new System.Windows.Forms.Button();
             this.creditLabel = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.modeGroupBox.SuspendLayout();
             this.variablesGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.massNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.velocityNumeric)).BeginInit();
             this.goGroupBox.SuspendLayout();
             this.resultsGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -61,14 +60,14 @@
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.titleLabel.Location = new System.Drawing.Point(82, 26);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(499, 31);
+            this.titleLabel.Size = new System.Drawing.Size(484, 31);
             this.titleLabel.TabIndex = 0;
-            this.titleLabel.Text = "PHYS 252 - Simulation of Time Dialation";
+            this.titleLabel.Text = "PHYS 252 - Simulation of Time Dilation";
             this.titleLabel.Click += new System.EventHandler(this.titleLabel_Click);
             // 
             // modeGroupBox
             // 
-            this.modeGroupBox.Controls.Add(this.velocityRadioButton);
+            this.modeGroupBox.Controls.Add(this.timeRadioButton);
             this.modeGroupBox.Controls.Add(this.massRadioButton);
             this.modeGroupBox.Font = new System.Drawing.Font("Tempus Sans ITC", 15F);
             this.modeGroupBox.Location = new System.Drawing.Point(29, 92);
@@ -78,16 +77,17 @@
             this.modeGroupBox.TabStop = false;
             this.modeGroupBox.Text = "Step 1: Pick mode";
             // 
-            // velocityRadioButton
+            // timeRadioButton
             // 
-            this.velocityRadioButton.AutoSize = true;
-            this.velocityRadioButton.Location = new System.Drawing.Point(121, 23);
-            this.velocityRadioButton.Name = "velocityRadioButton";
-            this.velocityRadioButton.Size = new System.Drawing.Size(99, 30);
-            this.velocityRadioButton.TabIndex = 1;
-            this.velocityRadioButton.TabStop = true;
-            this.velocityRadioButton.Text = "Velocity";
-            this.velocityRadioButton.UseVisualStyleBackColor = true;
+            this.timeRadioButton.AutoSize = true;
+            this.timeRadioButton.Location = new System.Drawing.Point(121, 23);
+            this.timeRadioButton.Name = "timeRadioButton";
+            this.timeRadioButton.Size = new System.Drawing.Size(72, 30);
+            this.timeRadioButton.TabIndex = 1;
+            this.timeRadioButton.TabStop = true;
+            this.timeRadioButton.Text = "Time";
+            this.timeRadioButton.UseVisualStyleBackColor = true;
+            this.timeRadioButton.CheckedChanged += new System.EventHandler(this.velocityRadioButton_CheckedChanged);
             // 
             // massRadioButton
             // 
@@ -100,91 +100,65 @@
             this.massRadioButton.Text = "Mass";
             this.massRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // velocityLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(136, 34);
-            this.textBox1.TabIndex = 2;
+            this.velocityLabel.AutoSize = true;
+            this.velocityLabel.Font = new System.Drawing.Font("Tempus Sans ITC", 12F);
+            this.velocityLabel.Location = new System.Drawing.Point(166, 48);
+            this.velocityLabel.Name = "velocityLabel";
+            this.velocityLabel.Size = new System.Drawing.Size(65, 20);
+            this.velocityLabel.TabIndex = 5;
+            this.velocityLabel.Text = "Velocity";
             // 
-            // textBox2
+            // massLabel
             // 
-            this.textBox2.Location = new System.Drawing.Point(23, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(136, 34);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(23, 93);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(136, 34);
-            this.textBox3.TabIndex = 4;
-            // 
-            // heightLabel
-            // 
-            this.heightLabel.AutoSize = true;
-            this.heightLabel.Font = new System.Drawing.Font("Tempus Sans ITC", 12F);
-            this.heightLabel.Location = new System.Drawing.Point(179, 40);
-            this.heightLabel.Name = "heightLabel";
-            this.heightLabel.Size = new System.Drawing.Size(55, 20);
-            this.heightLabel.TabIndex = 5;
-            this.heightLabel.Text = "Height";
-            // 
-            // weightLabel
-            // 
-            this.weightLabel.AutoSize = true;
-            this.weightLabel.Font = new System.Drawing.Font("Tempus Sans ITC", 12F);
-            this.weightLabel.Location = new System.Drawing.Point(178, 70);
-            this.weightLabel.Name = "weightLabel";
-            this.weightLabel.Size = new System.Drawing.Size(59, 20);
-            this.weightLabel.TabIndex = 6;
-            this.weightLabel.Text = "Weight";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tempus Sans ITC", 12F);
-            this.label3.Location = new System.Drawing.Point(179, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "label3";
+            this.massLabel.AutoSize = true;
+            this.massLabel.Font = new System.Drawing.Font("Tempus Sans ITC", 12F);
+            this.massLabel.Location = new System.Drawing.Point(179, 88);
+            this.massLabel.Name = "massLabel";
+            this.massLabel.Size = new System.Drawing.Size(40, 20);
+            this.massLabel.TabIndex = 6;
+            this.massLabel.Text = "Mass";
             // 
             // variablesGroupBox
             // 
-            this.variablesGroupBox.Controls.Add(this.label4);
-            this.variablesGroupBox.Controls.Add(this.textBox5);
-            this.variablesGroupBox.Controls.Add(this.textBox2);
-            this.variablesGroupBox.Controls.Add(this.label3);
-            this.variablesGroupBox.Controls.Add(this.textBox1);
-            this.variablesGroupBox.Controls.Add(this.weightLabel);
-            this.variablesGroupBox.Controls.Add(this.textBox3);
-            this.variablesGroupBox.Controls.Add(this.heightLabel);
+            this.variablesGroupBox.Controls.Add(this.massNumeric);
+            this.variablesGroupBox.Controls.Add(this.velocityNumeric);
+            this.variablesGroupBox.Controls.Add(this.massLabel);
+            this.variablesGroupBox.Controls.Add(this.velocityLabel);
             this.variablesGroupBox.Font = new System.Drawing.Font("Tempus Sans ITC", 15F);
             this.variablesGroupBox.Location = new System.Drawing.Point(29, 182);
             this.variablesGroupBox.Name = "variablesGroupBox";
-            this.variablesGroupBox.Size = new System.Drawing.Size(289, 199);
+            this.variablesGroupBox.Size = new System.Drawing.Size(289, 126);
             this.variablesGroupBox.TabIndex = 8;
             this.variablesGroupBox.TabStop = false;
             this.variablesGroupBox.Text = "Step 2: Fill in necessary info";
             // 
-            // label4
+            // massNumeric
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tempus Sans ITC", 12F);
-            this.label4.Location = new System.Drawing.Point(178, 133);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 20);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "label4";
+            this.massNumeric.DecimalPlaces = 2;
+            this.massNumeric.Location = new System.Drawing.Point(20, 82);
+            this.massNumeric.Maximum = new decimal(new int[] {
+            1569325056,
+            23283064,
+            0,
+            0});
+            this.massNumeric.Name = "massNumeric";
+            this.massNumeric.Size = new System.Drawing.Size(120, 34);
+            this.massNumeric.TabIndex = 14;
             // 
-            // textBox5
+            // velocityNumeric
             // 
-            this.textBox5.Location = new System.Drawing.Point(23, 126);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(136, 34);
-            this.textBox5.TabIndex = 8;
+            this.velocityNumeric.DecimalPlaces = 2;
+            this.velocityNumeric.Location = new System.Drawing.Point(20, 42);
+            this.velocityNumeric.Maximum = new decimal(new int[] {
+            1569325056,
+            23283064,
+            0,
+            0});
+            this.velocityNumeric.Name = "velocityNumeric";
+            this.velocityNumeric.Size = new System.Drawing.Size(120, 34);
+            this.velocityNumeric.TabIndex = 13;
             // 
             // goGroupBox
             // 
@@ -205,6 +179,7 @@
             this.startButton.TabIndex = 0;
             this.startButton.Text = "Start Simulation";
             this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // resultsGroupBox
             // 
@@ -255,6 +230,10 @@
             this.creditLabel.TabIndex = 12;
             this.creditLabel.Text = "By: Ashley Shea, Nicholas Mangopoulos, and Jacob Willinger";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
@@ -270,10 +249,13 @@
             this.Font = new System.Drawing.Font("Tempus Sans ITC", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "mainForm";
             this.Text = "PHYS 252 - Simulation of Time Variation";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.modeGroupBox.ResumeLayout(false);
             this.modeGroupBox.PerformLayout();
             this.variablesGroupBox.ResumeLayout(false);
             this.variablesGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.massNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.velocityNumeric)).EndInit();
             this.goGroupBox.ResumeLayout(false);
             this.resultsGroupBox.ResumeLayout(false);
             this.resultsGroupBox.PerformLayout();
@@ -287,24 +269,21 @@
 
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.GroupBox modeGroupBox;
-        private System.Windows.Forms.RadioButton velocityRadioButton;
+        private System.Windows.Forms.RadioButton timeRadioButton;
         private System.Windows.Forms.RadioButton massRadioButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label heightLabel;
-        private System.Windows.Forms.Label weightLabel;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label velocityLabel;
+        private System.Windows.Forms.Label massLabel;
         private System.Windows.Forms.GroupBox variablesGroupBox;
         private System.Windows.Forms.GroupBox goGroupBox;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.GroupBox resultsGroupBox;
         private System.Windows.Forms.TextBox resultsTextBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Label creditLabel;
+        private System.Windows.Forms.NumericUpDown massNumeric;
+        private System.Windows.Forms.NumericUpDown velocityNumeric;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
