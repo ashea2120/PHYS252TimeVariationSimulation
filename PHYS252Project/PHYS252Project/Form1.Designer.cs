@@ -152,8 +152,8 @@
             this.velocityNumeric.DecimalPlaces = 2;
             this.velocityNumeric.Location = new System.Drawing.Point(20, 42);
             this.velocityNumeric.Maximum = new decimal(new int[] {
-            1569325056,
-            23283064,
+            299792458,
+            0,
             0,
             0});
             this.velocityNumeric.Name = "velocityNumeric";
@@ -164,9 +164,9 @@
             // 
             this.goGroupBox.Controls.Add(this.startButton);
             this.goGroupBox.Font = new System.Drawing.Font("Tempus Sans ITC", 15F);
-            this.goGroupBox.Location = new System.Drawing.Point(29, 403);
+            this.goGroupBox.Location = new System.Drawing.Point(29, 332);
             this.goGroupBox.Name = "goGroupBox";
-            this.goGroupBox.Size = new System.Drawing.Size(289, 85);
+            this.goGroupBox.Size = new System.Drawing.Size(289, 79);
             this.goGroupBox.TabIndex = 9;
             this.goGroupBox.TabStop = false;
             this.goGroupBox.Text = "Step 3: Hit \"Start Simulation\"";
@@ -187,7 +187,7 @@
             this.resultsGroupBox.Font = new System.Drawing.Font("Tempus Sans ITC", 15F);
             this.resultsGroupBox.Location = new System.Drawing.Point(358, 92);
             this.resultsGroupBox.Name = "resultsGroupBox";
-            this.resultsGroupBox.Size = new System.Drawing.Size(321, 289);
+            this.resultsGroupBox.Size = new System.Drawing.Size(321, 234);
             this.resultsGroupBox.TabIndex = 10;
             this.resultsGroupBox.TabStop = false;
             this.resultsGroupBox.Text = "Step 4: View Results   ";
@@ -197,28 +197,29 @@
             this.resultsTextBox.Location = new System.Drawing.Point(7, 34);
             this.resultsTextBox.Multiline = true;
             this.resultsTextBox.Name = "resultsTextBox";
-            this.resultsTextBox.Size = new System.Drawing.Size(308, 249);
+            this.resultsTextBox.Size = new System.Drawing.Size(308, 194);
             this.resultsTextBox.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.clearButton);
             this.groupBox1.Font = new System.Drawing.Font("Tempus Sans ITC", 15F);
-            this.groupBox1.Location = new System.Drawing.Point(358, 403);
+            this.groupBox1.Location = new System.Drawing.Point(358, 332);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(321, 85);
+            this.groupBox1.Size = new System.Drawing.Size(321, 79);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Step 5: Once completed, hit \"Reset\"";
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(69, 33);
+            this.clearButton.Location = new System.Drawing.Point(69, 29);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(177, 30);
+            this.clearButton.Size = new System.Drawing.Size(160, 34);
             this.clearButton.TabIndex = 0;
             this.clearButton.Text = "Reset";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // creditLabel
             // 
@@ -238,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 516);
+            this.ClientSize = new System.Drawing.Size(707, 429);
             this.Controls.Add(this.creditLabel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.resultsGroupBox);

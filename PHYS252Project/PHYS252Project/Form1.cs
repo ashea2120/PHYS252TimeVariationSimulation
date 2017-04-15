@@ -28,7 +28,6 @@ namespace PHYS252Project
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            //Equation we are working with
             
         }
 
@@ -47,13 +46,33 @@ namespace PHYS252Project
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            //Note: The max the velocity can be is the speed of light: 299792458
+
             //Take the values from textboxes and load them into the equation
             decimal massOrTime = massNumeric.Value;
             decimal velocity = velocityNumeric.Value;
 
-            
+            //plugging in the numbers from the Numeric boxes and doing the calculation
+            //This is the formula that was used: t = t0 / square root{ (1 - v2 / c2) }
             double result = (Convert.ToDouble(massOrTime)) / (Math.Sqrt(1 - (Convert.ToDouble((velocity * velocity)) / Convert.ToDouble((lightspeed * lightspeed)))));
-            resultsTextBox.Text = "The initial value is: " + massOrTime + "\r\nThe velocity you entered is: " + velocity + "\r\nAnd the final value is: " + result;
+
+            //Depending on which mode we are in, we want to print different things to the results textbox
+            if (massRadioButton.Checked)
+            {
+                resultsTextBox.Text = "The mass entered: " + massOrTime + "\r\nThe velocity entered: " + velocity + "\r\nThe resultant time: " + result;
+            }
+            else
+            {
+                resultsTextBox.Text = "The time entered: " + massOrTime + "\r\nThe velocity entered: " + velocity + "\r\nThe resultant mass: " + result;
+            }
+            
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            massNumeric.Value = 0;
+            velocityNumeric.Value = 0;
+            resultsTextBox.Clear();
         }
     } 
 }
