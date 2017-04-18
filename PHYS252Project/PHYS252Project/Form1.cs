@@ -36,11 +36,11 @@ namespace PHYS252Project
             //Ensuring the right textboxes display depending on the mode that is selected
             if (massRadioButton.Checked == true)
             {
-                massLabel.Text = "Mass";
+                massLabel.Text = "Mass (kg)";
             }
             else
             {
-                massLabel.Text = "Time";
+                massLabel.Text = "Time (s)";
             }
         }
 

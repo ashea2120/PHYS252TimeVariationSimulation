@@ -137,27 +137,27 @@
             // massNumeric
             // 
             this.massNumeric.DecimalPlaces = 2;
-            this.massNumeric.Location = new System.Drawing.Point(20, 82);
+            this.massNumeric.Location = new System.Drawing.Point(6, 82);
             this.massNumeric.Maximum = new decimal(new int[] {
             1569325056,
             23283064,
             0,
             0});
             this.massNumeric.Name = "massNumeric";
-            this.massNumeric.Size = new System.Drawing.Size(120, 34);
+            this.massNumeric.Size = new System.Drawing.Size(154, 34);
             this.massNumeric.TabIndex = 14;
             // 
             // velocityNumeric
             // 
             this.velocityNumeric.DecimalPlaces = 2;
-            this.velocityNumeric.Location = new System.Drawing.Point(20, 42);
+            this.velocityNumeric.Location = new System.Drawing.Point(6, 42);
             this.velocityNumeric.Maximum = new decimal(new int[] {
             299792458,
             0,
             0,
             0});
             this.velocityNumeric.Name = "velocityNumeric";
-            this.velocityNumeric.Size = new System.Drawing.Size(120, 34);
+            this.velocityNumeric.Size = new System.Drawing.Size(154, 34);
             this.velocityNumeric.TabIndex = 13;
             // 
             // goGroupBox
