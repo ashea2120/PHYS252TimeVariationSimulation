@@ -54,16 +54,18 @@ namespace PHYS252Project
 
             //plugging in the numbers from the Numeric boxes and doing the calculation
             //This is the formula that was used: t = t0 / square root{ (1 - v2 / c2) }
-            double result = (Convert.ToDouble(massOrTime)) / (Math.Sqrt(1 - (Convert.ToDouble((velocity * velocity)) / Convert.ToDouble((lightspeed * lightspeed)))));
+            double result = 0;
 
             //Depending on which mode we are in, we want to print different things to the results textbox
             if (massRadioButton.Checked)
             {
-                resultsTextBox.Text = "The mass entered: " + massOrTime + "\r\nThe velocity entered: " + velocity + "\r\nThe resultant time: " + result;
+                result = (Convert.ToDouble(massOrTime)) / (Math.Sqrt(1 - (Convert.ToDouble((velocity * velocity)) / Convert.ToDouble((lightspeed * lightspeed)))));
+                resultsTextBox.Text = "The mass entered: " + massOrTime + "\r\nThe velocity entered: " + velocity + "\r\nThe relativistic mass: " + result;
             }
             else
             {
-                resultsTextBox.Text = "The time entered: " + massOrTime + "\r\nThe velocity entered: " + velocity + "\r\nThe resultant mass: " + result;
+                result = (Convert.ToDouble(massOrTime)) / (Math.Sqrt(1 - (Convert.ToDouble((velocity * velocity)) / Convert.ToDouble((lightspeed * lightspeed)))));
+                resultsTextBox.Text = "The time entered: " + massOrTime + "\r\nThe velocity entered: " + velocity + "\r\nThe resultant time dilation: " + result;
             }
             
         }

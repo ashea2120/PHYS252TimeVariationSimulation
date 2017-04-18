@@ -80,12 +80,12 @@
             // timeRadioButton
             // 
             this.timeRadioButton.AutoSize = true;
-            this.timeRadioButton.Location = new System.Drawing.Point(121, 23);
+            this.timeRadioButton.Location = new System.Drawing.Point(151, 23);
             this.timeRadioButton.Name = "timeRadioButton";
-            this.timeRadioButton.Size = new System.Drawing.Size(72, 30);
+            this.timeRadioButton.Size = new System.Drawing.Size(102, 30);
             this.timeRadioButton.TabIndex = 1;
             this.timeRadioButton.TabStop = true;
-            this.timeRadioButton.Text = "Time";
+            this.timeRadioButton.Text = "Time (s)";
             this.timeRadioButton.UseVisualStyleBackColor = true;
             this.timeRadioButton.CheckedChanged += new System.EventHandler(this.velocityRadioButton_CheckedChanged);
             // 
@@ -94,10 +94,10 @@
             this.massRadioButton.AutoSize = true;
             this.massRadioButton.Location = new System.Drawing.Point(6, 23);
             this.massRadioButton.Name = "massRadioButton";
-            this.massRadioButton.Size = new System.Drawing.Size(71, 30);
+            this.massRadioButton.Size = new System.Drawing.Size(114, 30);
             this.massRadioButton.TabIndex = 0;
             this.massRadioButton.TabStop = true;
-            this.massRadioButton.Text = "Mass";
+            this.massRadioButton.Text = "Mass (kg)";
             this.massRadioButton.UseVisualStyleBackColor = true;
             // 
             // velocityLabel
@@ -106,9 +106,9 @@
             this.velocityLabel.Font = new System.Drawing.Font("Tempus Sans ITC", 12F);
             this.velocityLabel.Location = new System.Drawing.Point(166, 48);
             this.velocityLabel.Name = "velocityLabel";
-            this.velocityLabel.Size = new System.Drawing.Size(65, 20);
+            this.velocityLabel.Size = new System.Drawing.Size(110, 20);
             this.velocityLabel.TabIndex = 5;
-            this.velocityLabel.Text = "Velocity";
+            this.velocityLabel.Text = "Velocity (m/s)";
             // 
             // massLabel
             // 
@@ -116,9 +116,9 @@
             this.massLabel.Font = new System.Drawing.Font("Tempus Sans ITC", 12F);
             this.massLabel.Location = new System.Drawing.Point(179, 88);
             this.massLabel.Name = "massLabel";
-            this.massLabel.Size = new System.Drawing.Size(40, 20);
+            this.massLabel.Size = new System.Drawing.Size(74, 20);
             this.massLabel.TabIndex = 6;
-            this.massLabel.Text = "Mass";
+            this.massLabel.Text = "Mass (kg)";
             // 
             // variablesGroupBox
             // 
